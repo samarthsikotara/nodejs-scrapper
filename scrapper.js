@@ -50,4 +50,5 @@ module.exports = {
 module.exports.fetchData('https://medium.com').then((success) => {
 	console.log(success)
 	process.exit(1);
+	
 })
