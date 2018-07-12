@@ -36,11 +36,11 @@ module.exports = {
 			//awaits for returned promises
 			return Promise.map(all_urls, module.exports.fetchData, { concurrency: maxAllowedConnections })
       .then((final_results) => {
-      	var data = {};
-        for (var i = 0; i < final_results.length; i++)
-           data[all_urls[i]] = final_results[i];
-        
-        return data;
+	var data = {};
+	for (var i = 0; i < final_results.length; i++)
+	   data[all_urls[i]] = final_results[i];
+	
+	return data;
       });
 		})
 
