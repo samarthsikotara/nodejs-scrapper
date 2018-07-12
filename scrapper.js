@@ -21,9 +21,9 @@ module.exports = {
 							all_urls.push(attribs.href)
 							fs.appendFile('test.txt', attribs.href+'\n', function(err) {
 								if(err) {
-						      return console.log(err);
-						    }
-						  })
+									return console.log(err);
+								}
+							})
 							console.log("Url!========> "+attribs.href);
 						}
 					}
@@ -35,13 +35,13 @@ module.exports = {
 
 			//awaits for returned promises
 			return Promise.map(all_urls, module.exports.fetchData, { concurrency: maxAllowedConnections })
-      .then((final_results) => {
+			.then((final_results) => {
 	var data = {};
 	for (var i = 0; i < final_results.length; i++)
-	   data[all_urls[i]] = final_results[i];
+		 data[all_urls[i]] = final_results[i];
 	
 	return data;
-      });
+			});
 		})
 
 	}
